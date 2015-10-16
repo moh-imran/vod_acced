@@ -1,0 +1,93 @@
+
+<div class="container">
+   
+    <section class="panel panel-primary">
+        <div class="panel-heading">Login Section</div>
+        <div class="panel-body">
+                <div class="row">
+        <div class="col-md-6">
+            <div id="login" class="login-signup" >
+                <span class="hook"></span>
+                <div class="login-title">LogIn for VOD</div>
+
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+
+                        <form name="login" ng-submit="loginForm(loginData, login.$valid)" novalidate>
+                            <div class="form-group">
+                                <input type="text" ng-model="loginData.username" name="username" class="form-control" placeholder="Email" required>
+                                <span style="color:red" ng-show="login.$submitted || login.username.$dirty && login.username.$touched && login.username.$invalid">
+                                <span class="eroor" ng-show="login.username.$error.required">Email is required.</span>
+                                <span class="eroor"  ng-show="login.username.$error.email">Invalid Email</span></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" ng-model="loginData.password" placeholder="Password" class="form-control" name="password"  required>
+                                <span style="color:red" ng-show="login.$submitted || login.password.$dirty && login.password.$touched && login.password.$invalid">
+                                <span class="eroor" ng-show="login.password.$error.required">Password is required.</span>
+                                </span>
+                            </div>
+                            
+
+                            <input type="submit" class="btn btn-primary" value="Login">
+                        </form>
+                        <div >
+                            <ul>
+                                <li class="s-text errormessage" data-ng-repeat="x in Messages track by $index">
+
+                                {{ x }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="login" class="login-signup" >
+                <span class="hook"></span>
+                <div class="login-title">SignUp For VOD</div>
+
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+
+                        <form class="fix-bottom-margin" name="signup"  ng-submit="signupForm(sginupData, signup.$valid)" novalidate >
+                            <div class="form-group">
+                                 <input type="email" ng-model="sginupData.email" name="email" class="form-control" placeholder="Email Address" required>
+                                <span style="color:red" ng-show="signup.$submitted || signup.email.$dirty && signup.email.$touched && signup.email.$invalid">
+                                    <span class="eroor" ng-show="signup.email.$error.required">Email is Required</span>
+                                <span class="eroor" ng-show="signup.email.$error.email">Email is Invalid</span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" ng-model="sginupData.password" name="password" class="form-control" placeholder="Password" pass-validator required>
+                            <span style="color:red" ng-show="signup.$submitted || signup.password.$dirty && signup.password.$touched && signup.password.$invalid">
+                                    <span class="eroor" ng-show="signup.password.$error.required">Password is Required</span>
+                                </span>
+                            <span class="eroor" ng-show="signup.password.$dirty && signup.password.$invalid">Must be from 6 to 24 symbols long ang contain at least one digit.</span>
+                            </div>
+                           
+                            
+                            <input type="submit" class="btn btn-primary" value="SignUp">
+                        </form>
+                        <div >
+                            <ul>
+                                <li class="s-text errormessage" data-ng-repeat="x in Messages1 track by $index">
+
+                                {{ x }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+
+</div>
+<div>
+
+
+
+

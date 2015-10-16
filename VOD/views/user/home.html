@@ -1,0 +1,84 @@
+<!--<ul class="bxslider" >-->
+
+<!--    Custome CSS   -->
+<style type="text/css">
+    body{
+            background-color: #F3F3F3;
+    }
+    .slider{
+        margin: 50px 0;
+    }
+    .span{
+        display: block;
+    }
+    .panel-default {
+    border-color: #ddd;
+}
+    .panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+</style>
+<div class="container">
+    <h1 class="abc">Videos From API</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="banner">
+            <div class="h-slider slider">
+                <div class="bxslider" ng-repeat ="videos in allVideosData track by $index " >
+                    <div id="video_container">
+                        <span id ="getvid"class="fancy-box" href="#img-popup"><video id="video-clip" style="width: 100%;" poster="http://media.w3.org/2010/05/sintel/poster.png" preload="none" controls="" id="video" tabindex="0">
+                           
+						   <source type="video/mp4" src="{{videos.sourcepath}}" id="mp4"> </source>
+                            <p>Your user agent does not support the HTML5 Video element.</p>
+                        </video>
+						</span>
+					<div id="img-popup" class="ab" style="width:1000px;display: none;">
+                    
+						<video id="video-clip" style="width: 100%;" poster="http://media.w3.org/2010/05/sintel/poster.png" preload="none" controls="" id="video" tabindex="0">
+						   <source type="video/mp4" src="{{videos.sourcepath}}" id="mp4"> </source>
+                            <p>Your user agent does not support the HTML5 Video element.</p>
+                        </video>
+					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <section class="panel panel-primary">
+            <div class="panel-heading">History of User</div>
+            <div class="panel-body">
+                <div id="video_append" ng-repeat ="vids in allVideos track by $index " >
+							
+                    
+						<video id="video-clip" style="width: 100%;" poster="http://media.w3.org/2010/05/sintel/poster.png" preload="none" controls="" id="video" tabindex="0">
+						   <source type="video/mp4" src="{{vids.videopath}}" id="mp4"> </source>
+                            <p>Your user agent does not support the HTML5 Video element.</p>
+                        </video>
+					
+				
+				</div>
+                
+               </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+    setTimeout(function(){ 
+	$('.h-slider').bxSlider();
+	$('.fancy-box').fancybox({  helpers: {overlay: {locked: false,closeClick: false }},padding: 10});
+	
+	
+	
+	}, 1000);
+	
+        
+ 
+</script>
+
